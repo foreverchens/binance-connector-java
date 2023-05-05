@@ -4,6 +4,9 @@ import com.binance.connector.client.impl.SpotClientImpl;
 import examples.PrivateConfig;
 import java.util.LinkedHashMap;
 
+/**
+ * 获取所有币信息
+ */
 public final class CoinInfo {
     private CoinInfo() {
     }

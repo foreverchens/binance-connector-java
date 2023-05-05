@@ -5,6 +5,9 @@ import examples.PrivateConfig;
 
 import java.util.LinkedHashMap;
 
+/**
+ * 获取可以转换成BNB的小额资产
+ */
 public final class BnbConvertibleAssets {
     private BnbConvertibleAssets() {
     }

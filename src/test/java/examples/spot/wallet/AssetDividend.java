@@ -4,6 +4,9 @@ import com.binance.connector.client.impl.SpotClientImpl;
 import examples.PrivateConfig;
 import java.util.LinkedHashMap;
 
+/**
+ * 资产利息记录
+ */
 public final class AssetDividend {
     private AssetDividend() {
     }

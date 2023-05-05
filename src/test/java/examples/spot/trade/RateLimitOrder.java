@@ -7,6 +7,9 @@ import examples.PrivateConfig;
 
 import java.util.LinkedHashMap;
 
+/**
+ * 获取用户在当前时间区间内的下单总数。
+ */
 public final class RateLimitOrder {
     private RateLimitOrder() {
     }

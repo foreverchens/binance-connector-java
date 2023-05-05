@@ -7,6 +7,9 @@ import examples.PrivateConfig;
 
 import java.util.LinkedHashMap;
 
+/**
+ * 撤销一个并重新下单
+ */
 public final class CancelReplace {
     private CancelReplace() {
     }

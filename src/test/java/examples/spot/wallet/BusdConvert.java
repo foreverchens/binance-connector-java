@@ -5,6 +5,9 @@ import examples.PrivateConfig;
 import java.math.BigDecimal;
 import java.util.LinkedHashMap;
 
+/**
+ * 稳定币自动兑换划转
+ */
 public final class BusdConvert {
     private BusdConvert() {
     }

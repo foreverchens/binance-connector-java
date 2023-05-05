@@ -17,6 +17,7 @@ public final class ExchangeInfo {
         String result = market.exchangeInfo(parameters);
         System.out.println(result);
 
+
         parameters.put("symbol", "BTCUSDT");
         result = market.exchangeInfo(parameters);
         System.out.println(result);

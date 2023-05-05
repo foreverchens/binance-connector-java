@@ -4,6 +4,9 @@ import com.binance.connector.client.impl.SpotClientImpl;
 import examples.PrivateConfig;
 import java.util.LinkedHashMap;
 
+/**
+ * 稳定币自动兑换划转历史
+ */
 public final class BusdConvertHistory {
     private BusdConvertHistory() {
     }

@@ -15,7 +15,7 @@ public final class MyTrades {
 
         SpotClientImpl client = new SpotClientImpl(PrivateConfig.TESTNET_API_KEY, PrivateConfig.TESTNET_SECRET_KEY, PrivateConfig.BASE_URL);
 
-        parameters.put("symbol", "BNBUSDT");
+        parameters.put("symbol", "JOEUSDT");
 
         try {
             String result = client.createTrade().myTrades(parameters);

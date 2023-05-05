@@ -4,6 +4,9 @@ import com.binance.connector.client.impl.SpotClientImpl;
 import examples.PrivateConfig;
 import java.util.LinkedHashMap;
 
+/**
+ * 上架币种详情
+ */
 public final class AssetDetail {
     private AssetDetail() {
     }

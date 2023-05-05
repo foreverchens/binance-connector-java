@@ -10,7 +10,7 @@ public final class NewOrder {
     private NewOrder() {
     }
     private static final double quantity = 0.01;
-    private static final double price = 50000;
+    private static final double price = 20000;
 
     public static void main(String[] args) {
         LinkedHashMap<String, Object> parameters = new LinkedHashMap<>();
@@ -18,7 +18,7 @@ public final class NewOrder {
         SpotClientImpl client = new SpotClientImpl(PrivateConfig.TESTNET_API_KEY, PrivateConfig.TESTNET_SECRET_KEY, PrivateConfig.BASE_URL);
 
         parameters.put("symbol", "BTCUSDT");
-        parameters.put("side", "SELL");
+        parameters.put("side", "BUY");
         parameters.put("type", "LIMIT");
         parameters.put("timeInForce", "GTC");
         parameters.put("quantity", quantity);

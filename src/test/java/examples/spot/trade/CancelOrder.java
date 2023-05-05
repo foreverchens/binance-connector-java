@@ -6,6 +6,9 @@ import com.binance.connector.client.impl.SpotClientImpl;
 import examples.PrivateConfig;
 import java.util.LinkedHashMap;
 
+/**
+ * 撤销一个指定的挂单
+ */
 public final class CancelOrder {
     private CancelOrder() {
     }

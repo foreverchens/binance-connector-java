@@ -5,6 +5,9 @@ import examples.PrivateConfig;
 
 import java.util.LinkedHashMap;
 
+/**
+ * 获取用户现有持仓
+ */
 public final class GetUserAsset {
     private GetUserAsset() {
     }

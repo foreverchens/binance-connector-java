@@ -4,6 +4,9 @@ import com.binance.connector.client.impl.SpotClientImpl;
 import examples.PrivateConfig;
 import java.util.LinkedHashMap;
 
+/**
+ * 账户资产每日快照
+ */
 public final class AccountSnapshot {
     private AccountSnapshot() {
     }
