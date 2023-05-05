@@ -173,19 +173,19 @@ public class CzClient {
 		return JSON.parseArray(orders, Order.class);
 	}
 
-	public Order createBuyAndLimitOrder(String symbol, BigDecimal price, BigDecimal qty) {
+	public Order createBuyOfLimitOrder(String symbol, BigDecimal price, BigDecimal qty) {
 		return createOrder(symbol, "BUY", "LIMIT", price, qty);
 	}
 
-	public Order createBuyAndMarketOrder(String symbol, BigDecimal price, BigDecimal qty) {
+	public Order createBuyOfMarketOrder(String symbol, BigDecimal price, BigDecimal qty) {
 		return createOrder(symbol, "BUY", "MARKET", price, qty);
 	}
 
-	public Order createSellAndLimitOrder(String symbol, BigDecimal price, BigDecimal qty) {
+	public Order createSellOfLimitOrder(String symbol, BigDecimal price, BigDecimal qty) {
 		return createOrder(symbol, "SELL", "LIMIT", price, qty);
 	}
 
-	public Order createSellAndMarketOrder(String symbol, BigDecimal price, BigDecimal qty) {
+	public Order createSellOfMarketOrder(String symbol, BigDecimal price, BigDecimal qty) {
 		return createOrder(symbol, "SELL", "MARKET", price, qty);
 	}
 

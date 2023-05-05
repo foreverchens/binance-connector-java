@@ -101,7 +101,7 @@ public class CzClientTest {
 	@Test
 	public void createBuyAndLimitOrder() {
 		BigDecimal price = BigDecimal.valueOf(20000);
-		Order order = czClient.createBuyAndLimitOrder(symbol, price, qty);
+		Order order = czClient.createBuyOfLimitOrder(symbol, price, qty);
 		System.out.println(order.getOrderId()); // 20752829061
 	}
 
