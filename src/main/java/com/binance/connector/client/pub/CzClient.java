@@ -21,6 +21,7 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 /**
  * 归纳一些常用的api
@@ -127,7 +128,7 @@ public class CzClient {
 	 */
 	public Map<String, BigDecimal> listUserAsset() {
 		LinkedHashMap<String, Object> param = new LinkedHashMap<>();
-		param.put("needBtcValuation",true);
+		param.put("needBtcValuation", true);
 		String data = wallet.getUserAsset(param);
 		JSONArray jsonArr = JSON.parseArray(data);
 		Map<String, BigDecimal> result = new HashMap<>();
@@ -178,16 +179,16 @@ public class CzClient {
 		return createOrder(symbol, "BUY", "LIMIT", price, qty);
 	}
 
-	public Order createBuyOfMarketOrder(String symbol, BigDecimal price, BigDecimal qty) {
-		return createOrder(symbol, "BUY", "MARKET", price, qty);
+	public Order createBuyOfMarketOrder(String symbol, BigDecimal qty) {
+		return createOrder(symbol, "BUY", "MARKET", null, qty);
 	}
 
 	public Order createSellOfLimitOrder(String symbol, BigDecimal price, BigDecimal qty) {
 		return createOrder(symbol, "SELL", "LIMIT", price, qty);
 	}
 
-	public Order createSellOfMarketOrder(String symbol, BigDecimal price, BigDecimal qty) {
-		return createOrder(symbol, "SELL", "MARKET", price, qty);
+	public Order createSellOfMarketOrder(String symbol, BigDecimal qty) {
+		return createOrder(symbol, "SELL", "MARKET", null, qty);
 	}
 
 
@@ -202,7 +203,9 @@ public class CzClient {
 		param.put("cancelReplaceMode", "ALLOW_FAILURE");
 		param.put("timeInForce", "GTC");
 		param.put("quantity", qty);
-		param.put("price", price);
+		if (!Objects.isNull(price)) {
+			param.put("price", price);
+		}
 		param.put("cancelOrderId", orderId);
 		String data = trade.cancelReplace(param);
 		JSONObject jsonObj = JSON.parseObject(data);
@@ -218,9 +221,16 @@ public class CzClient {
 		param.put("symbol", symbol);
 		param.put("side", orderSide);
 		param.put("type", orderType);
-		param.put("timeInForce", "GTC");
-		param.put("quantity", qty);
-		param.put("price", price);
+		if ("LIMIT".equals(orderType)) {
+			param.put("timeInForce", "GTC");
+			param.put("quantity", qty);
+		}
+		if ("MARKET".equals(orderType)) {
+			param.put("quoteOrderQty", qty);
+		}
+		if (!Objects.isNull(price)) {
+			param.put("price", price);
+		}
 		String data = trade.newOrder(param);
 		return JSON.parseObject(data, Order.class);
 	}

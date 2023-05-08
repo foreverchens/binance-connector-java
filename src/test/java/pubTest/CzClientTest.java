@@ -103,6 +103,12 @@ public class CzClientTest {
 		Order order = czClient.createBuyOfLimitOrder(symbol, price, qty);
 		System.out.println(order.getOrderId()); // 20752829061
 	}
+	@Test
+	public void createBuyOfMarketOrder() {
+		BigDecimal qty = BigDecimal.valueOf(10.01010101);
+		Order order = czClient.createBuyOfMarketOrder(symbol, qty);
+		System.out.println(order); // 20752829061
+	}
 
 	@Test
 	public void CancelReplaceOrder() {
