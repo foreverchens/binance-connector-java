@@ -27,7 +27,7 @@ public class CzClientTest {
 	private BigDecimal qty = BigDecimal.valueOf(0.01);
 
 
-	CzClient czClient = new CzClient(PrivateConfig.API_KEY, PrivateConfig.SECRET_KEY);
+	CzClient czClient = new CzClient(PrivateConfig.API_KEY,PrivateConfig.SECRET_KEY);
 
 
 	@Test
@@ -37,7 +37,6 @@ public class CzClientTest {
 
 	@Test
 	public void getAvgPrice() {
-		czClient = new CzClient("aaa","aaaaa");
 		System.out.println(czClient.getAvgPrice("BTCUSDT"));
 	}
 
@@ -78,7 +77,7 @@ public class CzClientTest {
 
 	@Test
 	public void getOrder() {
-		Long orderId = 20752848116L;
+		Long orderId = 1763779L;
 		System.out.println(czClient.getOrder(symbol, orderId));
 	}
 

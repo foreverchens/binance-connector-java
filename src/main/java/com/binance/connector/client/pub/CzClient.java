@@ -127,12 +127,13 @@ public class CzClient {
 	 */
 	public Map<String, BigDecimal> listUserAsset() {
 		LinkedHashMap<String, Object> param = new LinkedHashMap<>();
+		param.put("needBtcValuation",true);
 		String data = wallet.getUserAsset(param);
 		JSONArray jsonArr = JSON.parseArray(data);
 		Map<String, BigDecimal> result = new HashMap<>();
 		for (int i = 0; i < jsonArr.size(); i++) {
 			JSONObject jsonObj = jsonArr.getJSONObject(i);
-			if (jsonObj.getDouble("btcValuation") < 0.005) {
+			if (jsonObj.getDouble("btcValuation") < 0.001) {
 				// btc估值小于0。005
 				continue;
 			}
